@@ -11,7 +11,6 @@ public class App {
         commandMap.selectCommand("add", new AddCommand(service));
         commandMap.selectCommand("list", new ListCommand(service));
         commandMap.selectCommand("list done", new ListDoneCommand(service));
-
         commandMap.selectCommand("delete", new DeleteCommand(service));
         commandMap.selectCommand("update", new UpdateCommand(service));
         commandMap.selectCommand("mark-done", new MarkDone(service));
