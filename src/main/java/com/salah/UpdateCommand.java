@@ -16,12 +16,16 @@ public class UpdateCommand implements Command {
                 System.out.println("the correct command: update \"id\" \"new description\"");
             } else {
                 int id = Integer.parseInt(args[1]);
+                if (id < 1) {
+                    System.out.println("Invalid ID");
+                }
                 String description = String.join(" ", Arrays.copyOfRange(args, 2, args.length));
                 service.update(id, description);
 
             }
         } catch (Exception e) {
             System.out.println("invalid id");
+           // e.printStackTrace();
         }
     }
 }

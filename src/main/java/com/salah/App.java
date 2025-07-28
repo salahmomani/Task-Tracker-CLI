@@ -11,13 +11,15 @@ public class App {
         commandMap.selectCommand("add", new AddCommand(service));
         commandMap.selectCommand("list", new ListCommand(service));
         commandMap.selectCommand("list done", new ListDoneCommand(service));
+        commandMap.selectCommand("list todo", new ListToDoCommand(service));
+        commandMap.selectCommand("list in-progress", new ListInProgressCommand(service));
         commandMap.selectCommand("delete", new DeleteCommand(service));
         commandMap.selectCommand("update", new UpdateCommand(service));
         commandMap.selectCommand("mark-done", new MarkDone(service));
         commandMap.selectCommand("mark-in-progress", new MarkInProgress(service));
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Task CLI started. Enter commands (type 'exit' to quit).");
+        System.out.println("Task CLI started. Enter commands 'exit' to quit.");
 
         while (true) {
             System.out.print("task-cli> ");

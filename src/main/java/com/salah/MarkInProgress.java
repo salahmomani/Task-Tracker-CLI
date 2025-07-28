@@ -9,17 +9,16 @@ public class MarkInProgress implements Command {
 
     @Override
     public void execute(String[] args) {
-
         try {
             if (args.length != 2) {
-                System.out.println("the correct command: mark-done \"id\"");
-
+                System.out.println("the correct command: mark-in-progress \"id\"");
             } else {
                 int id = Integer.parseInt(args[1]);
-                service.markDone(id);
+                service.markInProgress(id);
+                service.listTodo().remove(id);
             }
         } catch (Exception e) {
-            System.out.println("failed mark this task done");
+            System.out.println("failed mark this task to in-progress");
         }
     }
 }

@@ -18,6 +18,10 @@ public class Service {
 
     public void update(int id, String description) {
         Task task = repo.findTaskID(id);
+
+        if (task == null) {
+            throw new IllegalArgumentException("Task with ID " + id + " not found.");
+        }
         task.setUpdateAt(LocalDateTime.now());
         task.setDescription(description);
         repo.save();

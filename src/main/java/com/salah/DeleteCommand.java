@@ -14,6 +14,9 @@ public class DeleteCommand implements Command {
                 System.out.println("the correct command: delete \"id\"");
             } else {
                 int id = Integer.parseInt(args[1]);
+                if (id < 1) {
+                    System.out.println("Invalid ID");
+                }
                 service.deleteTask(id);
             }
         } catch (Exception e) {

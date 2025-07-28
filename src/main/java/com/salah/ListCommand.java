@@ -10,12 +10,16 @@ public class ListCommand implements Command {
     public void execute(String[] args) {
         try {
             if (args.length == 1) {
-                System.out.println("TODO:");
-                service.listTodo().forEach(System.out::println);
-                System.out.println("\nIN PROGRESS:");
-                service.listInProgress().forEach(System.out::println);
-                System.out.println("\nDONE:");
-                service.listDone().forEach(System.out::println);
+
+                System.out.println("all tasks");
+                service.listAll().forEach(System.out::println);
+//
+//                System.out.println("TODO:");
+//                service.listTodo().forEach(System.out::println);
+//                System.out.println("\nIN PROGRESS:");
+//                service.listInProgress().forEach(System.out::println);
+//                System.out.println("\nDONE:");
+//                service.listDone().forEach(System.out::println);
             } else if (args.length == 2) {
                 switch (args[1].toLowerCase()) {
                     case "todo":

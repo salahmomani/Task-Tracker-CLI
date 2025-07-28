@@ -69,11 +69,11 @@ public class TaskRepo {
     }
 
     public Task findTaskID(int id) {
-        allTasks.
-                stream().
-                filter(t -> t.getId() == id).
-                findFirst().
-                orElse(null);
+        for (Task task : allTasks) {
+            if (task.getId() == id) {
+                return task;
+            }
+        }
         return null;
     }
 
