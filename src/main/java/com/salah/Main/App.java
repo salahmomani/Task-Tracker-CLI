@@ -1,4 +1,10 @@
-package com.salah;
+package com.salah.Main;
+
+import com.salah.Command.*;
+import com.salah.Service.MarkDone;
+import com.salah.Service.MarkInProgress;
+import com.salah.Service.Service;
+import com.salah.repo.TaskRepo;
 
 import java.util.Scanner;
 

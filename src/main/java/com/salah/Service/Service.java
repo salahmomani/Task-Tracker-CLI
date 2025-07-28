@@ -1,4 +1,8 @@
-package com.salah;
+package com.salah.Service;
+
+import com.salah.Task.Task;
+import com.salah.repo.TaskRepo;
+import com.salah.Status.TaskStatus;
 
 import java.time.LocalDateTime;
 import java.util.List;

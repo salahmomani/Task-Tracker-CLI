@@ -1,4 +1,6 @@
-package com.salah;
+package com.salah.Service;
+
+import com.salah.Command.Command;
 
 public class MarkInProgress implements Command {
     private Service service;

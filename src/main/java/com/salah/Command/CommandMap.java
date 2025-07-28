@@ -1,4 +1,4 @@
-package com.salah;
+package com.salah.Command;
 
 import java.util.HashMap;
 import java.util.Map;

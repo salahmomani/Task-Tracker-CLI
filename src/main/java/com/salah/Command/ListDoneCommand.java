@@ -1,4 +1,6 @@
-package com.salah;
+package com.salah.Command;
+
+import com.salah.Service.Service;
 
 public class ListDoneCommand implements Command {
     public Service service;

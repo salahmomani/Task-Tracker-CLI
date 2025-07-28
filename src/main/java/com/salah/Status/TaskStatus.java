@@ -1,4 +1,4 @@
-package com.salah;
+package com.salah.Status;
 
 public enum TaskStatus {
     TODO,

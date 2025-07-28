@@ -1,4 +1,8 @@
-package com.salah;
+package com.salah.Service;
+
+import com.salah.Command.Command;
+import com.salah.Task.Task;
+import com.salah.repo.TaskRepo;
 
 public class MarkDone implements Command {
     private Service service;

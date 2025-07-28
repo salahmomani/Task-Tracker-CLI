@@ -1,6 +1,6 @@
-package com.salah;
+package com.salah.Command;
 
-import java.beans.Introspector;
+import com.salah.Service.Service;
 
 public class ListInProgressCommand implements Command {
     private Service service;
