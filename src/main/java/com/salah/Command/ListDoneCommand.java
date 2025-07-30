@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ListDoneCommand implements Command {
-    public Service service;
+    private Service service;
 
     public ListDoneCommand(Service service) {
         this.service = service;

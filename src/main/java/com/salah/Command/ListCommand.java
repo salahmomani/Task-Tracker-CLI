@@ -7,7 +7,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ListCommand implements Command {
-    public Service service;
+    private Service service;
 
     public ListCommand(Service service) {
         this.service = service;
@@ -20,7 +20,6 @@ public class ListCommand implements Command {
         try {
             if (args.length == 1) {
 
-                System.out.println("all tasks");
                 service.listAll().forEach(System.out::println);
 
             } else if (args.length == 2) {
