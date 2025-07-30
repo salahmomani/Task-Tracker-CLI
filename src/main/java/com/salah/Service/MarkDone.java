@@ -20,10 +20,17 @@ public class MarkDone implements Command {
 
             } else {
                 int id = Integer.parseInt(args[1]);
-                Task task = repo.findTaskID(id);
-                service.markDone(id);
-                service.listTodo().remove(id);
-                service.listDone().add(task);
+             //   Task task = repo.findTaskID(id);
+               boolean result= service.markDone(id);
+                if (result) {
+                    System.out.println("Task with ID " + id + " marked as DONE.");
+                } else {
+                    System.out.println("Task not found.");
+                }
+//
+//                service.listTodo().remove(id);
+//                service.listDone().add(task);
+//                service.listInProgress().remove(task);
 
             }
         } catch (Exception e) {

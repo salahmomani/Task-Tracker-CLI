@@ -29,16 +29,16 @@ public class App {
 
         while (true) {
             System.out.print("task-cli> ");
-            String inputLine = scanner.nextLine();
-            if (inputLine.trim().equalsIgnoreCase("exit")) {
-                System.out.println("Exiting...");
+            String commandLine = scanner.nextLine();
+            if (commandLine.trim().equals("exit")) {
+                System.out.println("End the process");
                 break;
             }
-            if (inputLine.trim().isEmpty()) {
+            if (commandLine.trim().isEmpty()) {
                 continue;
             }
 
-            String[] inputArgs = inputLine.trim().split("\\s+");
+            String[] inputArgs = commandLine.trim().split("\\s+");
             String commandName = inputArgs[0];
 
             Command command = commandMap.getCommand(commandName);

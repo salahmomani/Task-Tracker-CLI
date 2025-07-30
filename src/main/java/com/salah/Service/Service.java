@@ -31,22 +31,37 @@ public class Service {
         repo.save();
     }
 
-    public void markDone(int id) {
+    public boolean markDone(int id) {
         Task task = repo.findTaskID(id);
         if (task != null) {
             task.setStatus(TaskStatus.DONE);
             task.setUpdateAt(LocalDateTime.now());
+
+            listTodo().removeIf(t -> t.getId() == id);
+            listInProgress().removeIf(t -> t.getId() == id);
+            if (!listDone().contains(task)) {
+                listDone().add(task);
+            }
             repo.save();
+            return true;
         }
+        return false;
     }
 
-    public void markInProgress(int id) {
+    public boolean markInProgress(int id) {
         Task task = repo.findTaskID(id);
         if (task != null) {
             task.setStatus(TaskStatus.IN_PROGRESS);
             task.setUpdateAt(LocalDateTime.now());
+            listTodo().removeIf(t -> t.getId() == id);
+            listDone().removeIf(t -> t.getId() == id);
+            if (!listInProgress().contains(task)) {
+                listInProgress().add(task);
+            }
             repo.save();
+            return true;
         }
+        return false;
     }
 
     public void deleteTask(int id) {
