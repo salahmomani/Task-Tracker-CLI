@@ -18,7 +18,7 @@ public class UpdateCommand implements Command {
     @Override
     public void execute(String[] args) {
         try {
-            if (args.length < 3) {
+            if (args.length != 3) {
                 System.out.println("the correct command: update \"id\" \"new description\"");
             } else {
                 int id = 0;
