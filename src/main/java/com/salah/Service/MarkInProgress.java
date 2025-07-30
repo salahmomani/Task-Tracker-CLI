@@ -28,7 +28,11 @@ public class MarkInProgress implements Command {
                 if (result) {
                     System.out.println("Task with ID " + id + " marked as IN-PROGRESS.");
                 } else {
-                    System.out.println("Task not found.");
+                    if (id < 1) {
+                        System.out.println("id invalid");
+                    } else {
+                        System.out.println("Task not found.");
+                    }
                 }
 
 

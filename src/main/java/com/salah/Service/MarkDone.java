@@ -27,7 +27,11 @@ public class MarkDone implements Command {
                 if (result) {
                     System.out.println("Task with ID " + id + " marked as DONE.");
                 } else {
-                    System.out.println("Task not found.");
+                    if (id < 1) {
+                        System.out.println("id invalid");
+                    } else {
+                        System.out.println("Task not found.");
+                    }
                 }
 
             }

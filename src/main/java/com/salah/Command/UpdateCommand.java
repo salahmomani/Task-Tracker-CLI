@@ -21,9 +21,16 @@ public class UpdateCommand implements Command {
             if (args.length < 3) {
                 System.out.println("the correct command: update \"id\" \"new description\"");
             } else {
-                int id = Integer.parseInt(args[1]);
+                int id = 0;
+                try {
+                    id = Integer.parseInt(args[1]);
+                } catch (NumberFormatException e) {
+                    LOGGER.log(Level.SEVERE, "An error occurred", e);
+
+                }
                 if (id < 1) {
                     System.out.println("Invalid ID");
+                    return;
                 }
                 String description = String.join(" ", Arrays.copyOfRange(args, 2, args.length));
                 service.update(id, description);
