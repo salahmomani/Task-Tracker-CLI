@@ -4,12 +4,16 @@ import com.salah.Command.Command;
 import com.salah.Task.Task;
 import com.salah.repo.TaskRepo;
 
+import java.util.logging.*;
+
 public class MarkDone implements Command {
     private Service service;
 
     public MarkDone(Service service) {
         this.service = service;
     }
+
+    private static final Logger LOGGER = Logger.getLogger(MarkDone.class.getName());
 
     @Override
     public void execute(String[] args) {
@@ -20,8 +24,8 @@ public class MarkDone implements Command {
 
             } else {
                 int id = Integer.parseInt(args[1]);
-             //   Task task = repo.findTaskID(id);
-               boolean result= service.markDone(id);
+                //   Task task = repo.findTaskID(id);
+                boolean result = service.markDone(id);
                 if (result) {
                     System.out.println("Task with ID " + id + " marked as DONE.");
                 } else {
@@ -34,7 +38,7 @@ public class MarkDone implements Command {
 
             }
         } catch (Exception e) {
-            System.out.println("failed mark this task to done");
+            LOGGER.log(Level.SEVERE, "An error occurred", e);
         }
     }
 }

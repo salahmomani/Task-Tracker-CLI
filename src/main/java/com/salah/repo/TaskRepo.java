@@ -3,6 +3,9 @@ package com.salah.repo;
 import com.salah.Task.Task;
 import com.salah.Status.TaskStatus;
 
+import java.util.logging.Logger;
+import java.util.logging.Level;
+
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -55,6 +58,8 @@ public class TaskRepo {
         save();
     }
 
+    private static final Logger LOGGER = Logger.getLogger(TaskRepo.class.getName());
+
     public void save() {
 
         try (FileWriter writer = new FileWriter(fileName)) {
@@ -65,7 +70,7 @@ public class TaskRepo {
             }
             writer.write("\n]");
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "An error occurred", e);
         }
     }
 

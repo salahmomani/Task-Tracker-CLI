@@ -1,11 +1,13 @@
 package com.salah.Command;
 
 import com.salah.Service.Service;
-
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import java.util.Arrays;
 
 public class AddCommand implements Command {
     private Service service;
+    private static final Logger LOGGER = Logger.getLogger(AddCommand.class.getName());
 
     public AddCommand(Service service) {
         this.service = service;
@@ -23,7 +25,7 @@ public class AddCommand implements Command {
                 service.add(description);
             }
         } catch (Exception e) {
-            System.out.println("failed add task");
+            LOGGER.log(Level.SEVERE, "An error occurred", e);
         }
     }
 }

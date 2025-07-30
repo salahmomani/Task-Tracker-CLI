@@ -2,12 +2,16 @@ package com.salah.Command;
 
 import com.salah.Service.Service;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class ListDoneCommand implements Command {
     public Service service;
 
     public ListDoneCommand(Service service) {
         this.service = service;
     }
+    private static final Logger LOGGER = Logger.getLogger(ListDoneCommand.class.getName());
 
     @Override
     public void execute(String[] args) {
@@ -19,7 +23,7 @@ public class ListDoneCommand implements Command {
                 service.listDone().forEach(System.out::println);
             }
         } catch (Exception e) {
-            System.out.println("failed list done task");
+            LOGGER.log(Level.SEVERE, "An error occurred", e);
         }
     }
 }

@@ -3,6 +3,8 @@ package com.salah.Command;
 import com.salah.Service.Service;
 
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class UpdateCommand implements Command {
     private Service service;
@@ -10,6 +12,8 @@ public class UpdateCommand implements Command {
     public UpdateCommand(Service service) {
         this.service = service;
     }
+
+    private static final Logger LOGGER = Logger.getLogger(UpdateCommand.class.getName());
 
     @Override
     public void execute(String[] args) {
@@ -26,8 +30,7 @@ public class UpdateCommand implements Command {
 
             }
         } catch (Exception e) {
-            System.out.println("invalid id");
-           // e.printStackTrace();
+            LOGGER.log(Level.SEVERE, "An error occurred", e);
         }
     }
 }

@@ -2,12 +2,19 @@ package com.salah.Command;
 
 import com.salah.Service.Service;
 
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class ListCommand implements Command {
     public Service service;
 
     public ListCommand(Service service) {
         this.service = service;
     }
+
+    private static final Logger LOGGER = Logger.getLogger(ListCommand.class.getName());
+
     @Override
     public void execute(String[] args) {
         try {
@@ -40,7 +47,7 @@ public class ListCommand implements Command {
                 System.out.println("Invalid command usage. Usage: list [todo|done|in-progress]");
             }
         } catch (Exception e) {
-            System.out.println("Failed to list tasks: " + e.getMessage());
+            LOGGER.log(Level.SEVERE, "An error occurred", e);
         }
     }
 }
