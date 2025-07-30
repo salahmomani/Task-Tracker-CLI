@@ -21,18 +21,6 @@ public class Task {
         this.updateAt = updateAt;
     }
 
-    public Task(int id, String description, TaskStatus status, LocalDateTime createdAt, LocalDateTime updateAt) {
-        this.id = id;
-        this.description = description;
-        this.status = status;
-        this.createdAt = createdAt;
-        this.updateAt = updateAt;
-
-        if (id >= counter) {
-            counter = id + 1;
-        }
-    }
-
     public static void setCounter(int newCounter) {
         counter = newCounter;
     }
