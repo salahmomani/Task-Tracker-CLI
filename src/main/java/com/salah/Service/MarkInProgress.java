@@ -20,7 +20,8 @@ public class MarkInProgress implements Command {
 
         try {
             if (args.length != 2) {
-                System.out.println("the correct command: mark-in-progress \"id\"");
+                System.out.println("please see the help sheet by write help command");
+
             } else {
                 int id = Integer.parseInt(args[1]);
 

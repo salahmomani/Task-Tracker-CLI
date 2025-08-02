@@ -17,7 +17,7 @@ public class ListToDoCommand implements Command {
     public void execute(String[] args) {
         try {
             if (args.length != 3) {
-                System.out.println("the correct command: list todo \"id\"");
+                System.out.println("please see the help sheet by write help command");
             } else {
                 service.listTodo().forEach(System.out::println);
             }

@@ -18,7 +18,7 @@ public class ListDoneCommand implements Command {
 
         try {
             if (args.length != 2) {
-                System.out.println("the correct command: list done \"id\"");
+                System.out.println("please see the help sheet by write help command");
             } else {
                 service.listDone().forEach(System.out::println);
             }

@@ -14,25 +14,15 @@ public class UpdateCommand implements Command {
         this.service = service;
     }
 
-    private static boolean isNumeric(String str) {
-        if (str == null || str.isEmpty()) return false;
-        try {
-            Integer.parseInt(str);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
     @Override
     public void execute(String[] args) {
         try {
             if (args.length < 3) {
-                System.out.println("The correct command: update <id> <new description>");
+                System.out.println("please see the help sheet by write help command");
                 return;
             }
 
-            if (!isNumeric(args[1])) {
+            if (!service.isNumeric(args[1])) {
                 System.out.println("Task ID must be a valid number.");
                 return;
             }

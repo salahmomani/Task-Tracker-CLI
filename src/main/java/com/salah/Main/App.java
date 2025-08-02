@@ -27,7 +27,7 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Task CLI started. Enter commands 'exit' to quit.");
-
+        System.out.println("To get help Enter \"help\" command");
         while (true) {
             System.out.print("task-cli> ");
             String commandLine = scanner.nextLine();
@@ -47,6 +47,8 @@ public class App {
                 command.execute(inputArgs);
             } else {
                 System.out.println("Unknown command: " + commandName);
+                System.out.println("please see the help sheet by write help command");
+
             }
         }
 

@@ -19,7 +19,7 @@ public class MarkDone implements Command {
     public void execute(String[] args) {
         try {
             if (args.length != 2) {
-                System.out.println("the correct command: mark-done \"id\"");
+                System.out.println("please see the help sheet by write help command");
 
             } else {
                 int id = Integer.parseInt(args[1]);

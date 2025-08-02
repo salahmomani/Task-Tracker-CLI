@@ -17,7 +17,7 @@ public class ListInProgressCommand implements Command {
     public void execute(String[] args) {
         try {
             if (args.length != 3) {
-                System.out.println("the correct command: list in-progress \"id\"");
+                System.out.println("please see the help sheet by write help command");
             } else {
                 service.listInProgress().forEach(System.out::println);
             }

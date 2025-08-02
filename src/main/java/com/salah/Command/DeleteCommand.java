@@ -17,8 +17,15 @@ public class DeleteCommand implements Command {
     @Override
     public void execute(String[] args) {
         try {
+
+            if (!service.isNumeric(args[1])) {
+                System.out.println("Task ID must be a valid number.");
+                return;
+            }
+
             if (args.length != 2) {
-                System.out.println("the correct command: delete \"id\"");
+                System.out.println("please see the help sheet by write help command");
+
             } else {
                 int id = Integer.parseInt(args[1]);
                 if (id < 1) {

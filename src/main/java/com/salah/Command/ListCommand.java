@@ -38,6 +38,8 @@ public class ListCommand implements Command {
                 }
             } else {
                 System.out.println("Invalid command usage. Usage: list [todo|done|in-progress]");
+                System.out.println("please see the help sheet by write help command");
+
             }
         } catch (Exception e) {
             LOGGER.log(Level.SEVERE, "An error occurred", e);
