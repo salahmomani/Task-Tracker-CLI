@@ -19,6 +19,10 @@ public class AddCommand implements Command {
         try {
 
 
+            if (service.isNumeric(args[1])) {
+                System.out.println("give a clear description ");
+                return;
+            }
             if (args.length < 2) {
                 System.out.println("please see the help sheet by write help command");
                 ;
