@@ -23,6 +23,7 @@ public class App {
         commandMap.selectCommand("update", new UpdateCommand(service));
         commandMap.selectCommand("mark-done", new MarkDone(service));
         commandMap.selectCommand("mark-in-progress", new MarkInProgress(service));
+        commandMap.selectCommand("help", new HelpCommand());
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Task CLI started. Enter commands 'exit' to quit.");
