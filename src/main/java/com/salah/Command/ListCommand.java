@@ -35,6 +35,8 @@ public class ListCommand implements Command {
                         break;
                     default:
                         System.out.println("Unknown list filter: " + args[1]);
+                        System.out.println("please see the help sheet by write help command");
+
                 }
             } else {
                 System.out.println("Invalid command usage. Usage: list [todo|done|in-progress]");
